@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Account | SmartLife AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body class="auth-body">
+    <div class="auth-shell">
+        <div class="auth-panel hero-panel">
+            <div class="brand-row">
+                <div class="brand-mark">S</div>
+                <div>
+                    <div class="eyebrow">SMARTLIFE AI</div>
+                    <h1>Build your money habits.</h1>
+                </div>
+            </div>
+            <h2>Start with a healthier financial future.</h2>
+            <p>Understand your cash flow, protect your budget, and build better savings habits from day one.</p>
+            <ul class="feature-list">
+                <li><i class="fa-solid fa-circle-check"></i> Structured personal finance tracking</li>
+                <li><i class="fa-solid fa-circle-check"></i> Goal-driven saving</li>
+                <li><i class="fa-solid fa-circle-check"></i> Simple, secure onboarding</li>
+            </ul>
+        </div>
+
+        <div class="auth-panel form-panel">
+            <div class="auth-nav">
+                <a href="/login">Login</a>
+                <a href="/register" class="active">Create account</a>
+            </div>
+            <h3>Register your account</h3>
+            <form id="register-form" class="auth-form">
+                <div class="input-group">
+                    <label for="register-name">Full Name</label>
+                    <input id="register-name" name="name" type="text" placeholder="Enter your full name" required />
+                </div>
+                <div class="input-group">
+                    <label for="register-email">Email</label>
+                    <input id="register-email" name="email" type="email" placeholder="you@example.com" required />
+                </div>
+                <div class="input-group">
+                    <label for="register-password">Password</label>
+                    <input id="register-password" name="password" type="password" placeholder="Minimum 8 characters" required />
+                </div>
+                <div class="input-group">
+                    <label for="register-confirm-password">Confirm Password</label>
+                    <input id="register-confirm-password" name="confirm_password" type="password" placeholder="Repeat password" required />
+                </div>
+                <div class="input-group">
+                    <label for="register-user-type">User Type</label>
+                    <select id="register-user-type" name="user_type">
+                        <option value="Student">Student</option>
+                        <option value="Employee">Employee</option>
+                        <option value="Professional">Professional</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <button type="submit" class="primary-btn">Create account</button>
+            </form>
+            <p class="alt-text">Already have an account? <a href="/login">Login</a></p>
+        </div>
+    </div>
+    <div class="toast-container" id="toast-container"></div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

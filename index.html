@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SmartLife AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="auth-body">
+    <div class="auth-shell">
+        <div class="auth-panel hero-panel">
+            <div class="brand-row">
+                <div class="brand-mark">S</div>
+                <div>
+                    <div class="eyebrow">PERSONAL FINANCE COACH</div>
+                    <h1>SmartLife AI</h1>
+                </div>
+            </div>
+            <h2>Know where your money goes.</h2>
+            <p>Track income, control expenses, set goals, and build healthier financial habits with a smart, simple dashboard designed for real life.</p>
+            <ul class="feature-list">
+                <li><i class="fa-solid fa-circle-check"></i> Real-time spending analytics</li>
+                <li><i class="fa-solid fa-circle-check"></i> Smart savings goals and targets</li>
+                <li><i class="fa-solid fa-circle-check"></i> Personalized financial coaching</li>
+            </ul>
+        </div>
+
+        <div class="auth-panel form-panel">
+            <div class="auth-nav">
+                <a href="/login" class="active">Login</a>
+                <a href="/register">Create account</a>
+            </div>
+            <h3>Welcome back</h3>
+            <form id="login-form" class="auth-form">
+                <div class="input-group">
+                    <label for="login-email">Email</label>
+                    <input id="login-email" name="email" type="email" placeholder="you@example.com" required />
+                </div>
+                <div class="input-group">
+                    <label for="login-password">Password</label>
+                    <input id="login-password" name="password" type="password" placeholder="Enter your password" required />
+                </div>
+                <div class="inline-row">
+                    <label class="checkbox-wrap"><input type="checkbox" name="remember_me" /> Remember me</label>
+                </div>
+                <button type="submit" class="primary-btn">Login</button>
+            </form>
+            <p class="alt-text">New to SmartLife? <a href="/register">Create an account</a></p>
+            <div class="demo-card">
+                <strong>Demo account</strong>
+                <p>Email: demo@smartlife.ai</p>
+                <p>Password: Demo123!</p>
+            </div>
+        </div>
+    </div>
+    <div class="toast-container" id="toast-container"></div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
