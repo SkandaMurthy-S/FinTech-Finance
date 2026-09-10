@@ -1,3 +1,4 @@
 [console_scripts]
-flask=flask.cli:main
+pip=pip._internal.cli.main:main
+pip3=pip._internal.cli.main:main
 
