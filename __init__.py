@@ -1,62 +1,38 @@
-# -*- coding: utf-8 -*-
+"""Jinja is a template engine written in pure Python. It provides a
+non-XML syntax that supports inline expressions and an optional
+sandboxed environment.
 """
-The root of the greenlet package.
-"""
 
-__all__ = [
-    '__version__',
-    '_C_API',
+from .bccache import BytecodeCache as BytecodeCache
+from .bccache import FileSystemBytecodeCache as FileSystemBytecodeCache
+from .bccache import MemcachedBytecodeCache as MemcachedBytecodeCache
+from .environment import Environment as Environment
+from .environment import Template as Template
+from .exceptions import TemplateAssertionError as TemplateAssertionError
+from .exceptions import TemplateError as TemplateError
+from .exceptions import TemplateNotFound as TemplateNotFound
+from .exceptions import TemplateRuntimeError as TemplateRuntimeError
+from .exceptions import TemplatesNotFound as TemplatesNotFound
+from .exceptions import TemplateSyntaxError as TemplateSyntaxError
+from .exceptions import UndefinedError as UndefinedError
+from .loaders import BaseLoader as BaseLoader
+from .loaders import ChoiceLoader as ChoiceLoader
+from .loaders import DictLoader as DictLoader
+from .loaders import FileSystemLoader as FileSystemLoader
+from .loaders import FunctionLoader as FunctionLoader
+from .loaders import ModuleLoader as ModuleLoader
+from .loaders import PackageLoader as PackageLoader
+from .loaders import PrefixLoader as PrefixLoader
+from .runtime import ChainableUndefined as ChainableUndefined
+from .runtime import DebugUndefined as DebugUndefined
+from .runtime import make_logging_undefined as make_logging_undefined
+from .runtime import StrictUndefined as StrictUndefined
+from .runtime import Undefined as Undefined
+from .utils import clear_caches as clear_caches
+from .utils import is_undefined as is_undefined
+from .utils import pass_context as pass_context
+from .utils import pass_environment as pass_environment
+from .utils import pass_eval_context as pass_eval_context
+from .utils import select_autoescape as select_autoescape
 
-    'GreenletExit',
-    'error',
-
-    'getcurrent',
-    'greenlet',
-
-    'gettrace',
-    'settrace',
-]
-
-# pylint:disable=no-name-in-module
-
-###
-# Metadata
-###
-__version__ = '3.5.5'
-from ._greenlet import _C_API # pylint:disable=no-name-in-module
-
-###
-# Exceptions
-###
-from ._greenlet import GreenletExit
-from ._greenlet import error
-
-###
-# greenlets
-###
-from ._greenlet import getcurrent
-from ._greenlet import greenlet
-
-###
-# tracing
-###
-from ._greenlet import gettrace
-from ._greenlet import settrace
-
-###
-# Constants
-# These constants aren't documented and aren't recommended.
-# In 1.0, USE_GC and USE_TRACING are always true, and USE_CONTEXT_VARS
-# is the same as ``sys.version_info[:2] >= 3.7``
-###
-from ._greenlet import GREENLET_USE_CONTEXT_VARS # pylint:disable=unused-import
-from ._greenlet import GREENLET_USE_GC # pylint:disable=unused-import
-from ._greenlet import GREENLET_USE_TRACING # pylint:disable=unused-import
-
-# Controlling the use of the gc module. Provisional API for this greenlet
-# implementation in 2.0.
-from ._greenlet import CLOCKS_PER_SEC # pylint:disable=unused-import
-from ._greenlet import enable_optional_cleanup # pylint:disable=unused-import
-from ._greenlet import get_clocks_used_doing_optional_cleanup # pylint:disable=unused-import
-
-# Other APIS in the _greenlet module are for test support.
+__version__ = "3.1.6"
